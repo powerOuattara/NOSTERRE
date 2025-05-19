@@ -1,70 +1,72 @@
 📊 Analyse des Ventes E-commerce – Version Freemium
-Ce projet propose une solution d’analyse commerciale pour les petits commerçants ou e-commerces. Il adopte un modèle freemium, avec :
+Ce projet propose une solution d'analyse commerciale automatisée pensée pour les petits commerçants ou e-commerces.
+Il adopte un modèle freemium, avec :
 
-Une version gratuite incluant les fonctionnalités de base
+✅ Version gratuite incluant les fonctionnalités de base
 
-Une version premium (à venir) pour des analyses avancées, automatisées et téléchargeables
+🔒 Version premium (à venir) avec analyses avancées, exports automatisés, alertes intelligentes et tableaux de bord téléchargeables.
 
 ✅ Fonctionnalités – Version Gratuite
-🔍 Chiffre d'affaires (CA) global
+🔍 Analyse de performance :
+Chiffre d'affaires global
 
-🛒 Top produits par revenus
+Meilleurs produits par revenus
 
-👤 Top clients
+Meilleurs clients
 
 🕒 Analyse temporelle :
+CA par mois, jour de la semaine, heure
 
-CA mensuel
+🚨 Alertes :
+Produits à faible stock
 
-CA par jour de la semaine
+Produits marginaux (<1% du CA)
 
-CA par heure
+Clients dormants (1 seule commande)
 
-⚠️ Alertes : produits à faible stock
+📊 Visualisations :
+Graphiques simples via Seaborn et Matplotlib
 
-📉 Détection de produits marginaux (<1% CA)
+⏳ Limite :
+Analyse sur les 30 derniers jours
 
-🛌 Identification des clients dormants (1 seule commande)
+🤖 Analyse commerciale automatisée
+À partir d’un simple fichier CSV, le script exécute une analyse complète :
 
-📊 Graphiques simples (Seaborn, Matplotlib)
-
-⏳ Historique limité à 30 derniers jours
-
-📈 Analyse commerciale automatisée
-À partir d’un simple fichier CSV, le script exécute une analyse stratégique des ventes :
-
-🔹 Statistiques générales
+🔹 Statistiques clés :
 Chiffre d'affaires total
 
 Panier moyen par client
 
 Moyenne, médiane, écart-type
 
-Coefficient de variation (volatilité)
+Coefficient de variation (CV) = mesure de volatilité
 
-🔹 Segmentation client et produit
-Top 10 produits par CA
+🔹 Segmentation client & produit :
+Top 10 produits & clients
 
-Top 10 clients
+RFM (Récence, Fréquence, Montant) → segmentation VIP, régulier, à risque
 
-🔹 Alerte dépendance
-Sur-dépendance à un seul produit ou client détectée automatiquement
+🔹 Alerte dépendance :
+Détection automatique si un produit ou client représente > 60% du CA
 
-🔹 Fidélisation & diversification
-Analyse de concentration des revenus
+🔹 Recommandations :
+Suggestions pour la fidélisation des clients
 
-Suggestions : diversification produit, fidélisation client
+Diversification produits
 
-🔹 Détection comportementale
-Clients dormants
+🔮 Modèles prédictifs (Machine Learning)
+Intégration simple de modèles prédictifs pour anticiper la demande :
 
-Produits marginaux
+KNN Classifier → Prévoit les ruptures de stock (0 = stock OK, 1 = alerte)
+
+Random Forest Regressor → Estime les ventes futures à partir du prix, jour, mois, etc.
 
 🔢 Données attendues
-Le fichier d’entrée est un CSV avec au minimum les colonnes suivantes :
+Fichier CSV avec les colonnes suivantes obligatoires :
 
 Colonne	Description
-InvoiceDate	Date de commande (format datetime)
+InvoiceDate	Date de commande (datetime)
 Description	Nom du produit
 Quantity	Quantité vendue
 UnitPrice	Prix unitaire
@@ -75,6 +77,13 @@ Country	Pays
 bash
 Copier
 Modifier
-├── Untitled.ipynb         # Notebook local de test
-├── requirements.txt       # Dépendances Python
-└── README.md              # Ce fichier
+├── analyse_commerciale.ipynb     # Notebook principal (analyse + modèles)
+├── exigences.txt                 # Dépendances Python (à installer avec pip)
+├── README.md                     # Ce fichier
+⚙️ Installation rapide :
+
+bash
+Copier
+Modifier
+pip install -r exigences.txt
+🟢 Fichier CSV → 📈 Analyse automatique → 🔔 Alerte stock et clients → 📊 Décisions plus intelligentes.
